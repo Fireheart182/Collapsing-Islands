@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{DE5B39C6-529F-7F87-C20A-20EBDA07CC7A}") = "Collapsing Islands (collab with Sydney)", "Assembly-CSharp.csproj", "{C2D333E1-455B-DE18-F7CE-F4CD1AF2322D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C2D333E1-455B-DE18-F7CE-F4CD1AF2322D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2D333E1-455B-DE18-F7CE-F4CD1AF2322D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2D333E1-455B-DE18-F7CE-F4CD1AF2322D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2D333E1-455B-DE18-F7CE-F4CD1AF2322D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

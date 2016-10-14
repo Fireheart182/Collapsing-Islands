@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{010030C3-23A8-356A-4F28-734E4E566410}") = "Collapsing Islands (Unity Project)", "Assembly-CSharp.csproj", "{DD71BC39-097B-ABBC-D376-53E2613CBE90}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD71BC39-097B-ABBC-D376-53E2613CBE90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD71BC39-097B-ABBC-D376-53E2613CBE90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD71BC39-097B-ABBC-D376-53E2613CBE90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD71BC39-097B-ABBC-D376-53E2613CBE90}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
