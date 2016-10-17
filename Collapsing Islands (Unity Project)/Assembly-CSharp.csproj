@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Resources\City\Scripts\Generate_From_Empty.cs" />
+     <Compile Include="Assets\Resources\City\Scripts\Test_Collapse.cs" />
      <Compile Include="Assets\Syd Assets\Islands-files\Materials\SinFloat.cs" />
      <Compile Include="Assets\Syd Assets\Islands-files\Materials\SinFloatIslands.cs" />
      <Compile Include="Assets\Syd Assets\Standard Assets\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
