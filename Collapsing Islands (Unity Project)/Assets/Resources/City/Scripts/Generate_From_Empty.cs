@@ -20,8 +20,8 @@ public class Generate_From_Empty : MonoBehaviour {
     // Don't let buildings get created outside the grid
     bool create_building(float x, float y, float z)
     {
-        float xdist = (n/2f) * scalar * offset + transform.position.x;
-        float zdist = (m/2f) * scalar * offset + transform.position.z;
+        float xdist = (n/2f) * offset + transform.position.x;
+        float zdist = (m/2f) * offset + transform.position.z;
         return (x > xdist || x < -xdist || 
             z > zdist || z < -zdist); 
     }
