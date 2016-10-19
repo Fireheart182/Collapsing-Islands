@@ -2,59 +2,16 @@
 using System.Collections;
 using System.IO;
 
-public class Node
-{
-    public GameObject building;
-    public Node next;
-    public Node prev;
-
-    public Node(GameObject b)
-    {
-        building = b;
-        next = null;
-        prev = null;
-    }
-}
-public class Stack
-{
-    public Node head;
-    public int length;
-
-    public Stack()
-    {
-        head = new Node(null);
-        length = 0;
-    }   
-
-    public void push(GameObject b)
-    {
-        Debug.Log("Pushing");
-        Node n = new Node(b);
-        head.prev = n;
-        n.next = head;
-        head = n;
-        length += 1;
-    }
-
-    public GameObject pop()
-    {
-        if (length == 0) return null;
-        GameObject res = head.building;
-        head = head.next;
-        length --;
-        return res;
-    }
-}
 
 public class Generate_From_Empty : MonoBehaviour {
 
-    public int offset;
+    public float offset;
     public int n;
     public int m;
     public float scalar;
 
     private GameObject[][] buildings;
-    private Stack S;
+    private bool falling;
 
     //Feather the edge of the city
     bool create_building(int i, int j, int n, int m)
@@ -81,7 +38,7 @@ public class Generate_From_Empty : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
-        S = new Stack();
+        falling = true;
         string path = "City/City Prefabs/";
         Object[] prefabs = Resources.LoadAll(path, typeof(GameObject));
 
@@ -89,7 +46,7 @@ public class Generate_From_Empty : MonoBehaviour {
         n = n > 0 ? n : 5;
         m = m > 0 ? m : 5;
         offset = offset > 0 ? offset : 3;
-        offset = (int)(offset * scalar);
+        offset = (offset * scalar);
         buildings =  new GameObject[n][];
 
         // New Building location
@@ -119,7 +76,7 @@ public class Generate_From_Empty : MonoBehaviour {
                         Quaternion.identity);
                     float individual_scale = Random.Range(0.5f * scalar, 1.5f * scalar);
     				buildings[i][j].transform.localScale = new Vector3(individual_scale, individual_scale, individual_scale);
-                    S.push(buildings[i][j]);
+                    buildings[i][j].transform.Rotate(0f,Random.Range(0.0f,360.0f),0f);
                 }
             }
         } 
@@ -130,11 +87,34 @@ public class Generate_From_Empty : MonoBehaviour {
     {
         if( Input.GetKeyDown( KeyCode.Space ) )
         {
-    	    GameObject b = S.pop();
-            if (b != null)
+            for (int choose = Random.Range(n*m,n*m); choose > 0 && falling; choose --)
             {
-                Animation anim = b.GetComponent<Animation>();
-                anim.Play();
+                int i = Random.Range(0, n-1);
+                int j = Random.Range(0, m-1);
+                int count = 0;
+                while (buildings[i][j] == null && count < n * m)
+                {
+                    i +=1;
+                    if (i == n)
+                    {
+                        i = 0;
+                        j += 1;
+                        j = j % m;
+                    }
+                    count ++;
+                }
+
+                GameObject b = buildings[i][j];
+                if (b == null)
+                {
+                    falling = false;
+                }
+                else
+                {
+                    Animation anim = b.GetComponent<Animation>();
+                    anim.Play();
+                    buildings[i][j] = null;
+                }
             }
     	}
     }
