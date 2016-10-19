@@ -14,26 +14,12 @@ public class Generate_From_Empty : MonoBehaviour {
     private bool falling;
 
     //Feather the edge of the city
-    bool create_building(int i, int j, int n, int m)
+    bool create_building(float x, float y, float z)
     {
-        int magic =  5;
-        if (i < magic)
-        {
-           return (Random.Range(0, i + 1) > 0);
-        }
-        else if (j < magic)
-        {
-           return (Random.Range(0, j + 1) > 0);
-        }
-        else if (i > n - magic)
-        {
-           return (Random.Range(0, n - i) > 0);
-        }
-        else if (j > m - magic)
-        {
-           return (Random.Range(0, n - j) > 0);
-        }
-        else return true;
+        float xdist = (n/2f) * scalar * offset + transform.position.x;
+        float zdist = (m/2f) * scalar * offset + transform.position.z;
+        return (x > xdist || x < -xdist || 
+            z > zdist || z < -zdist); 
     }
 	// Use this for initialization
 	void Start () 
@@ -51,7 +37,6 @@ public class Generate_From_Empty : MonoBehaviour {
 
         // New Building location
         float x, y, z;
-        
 
         for (int i = 0; i < n; i++)
         {
@@ -68,7 +53,7 @@ public class Generate_From_Empty : MonoBehaviour {
                     + Random.Range(-offset/2, offset/2) - offZ;
                 Debug.Log("X:" + x + " Y:" + y + " Z:" + z);
 
-                if (create_building(i,j,n,m))
+                if (create_building(x,y,z))
                 {
     				buildings[i][j] = (GameObject) Instantiate(
                         prefabs[to_make], 
