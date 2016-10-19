@@ -7,7 +7,7 @@ public class SinFloatIslands : MonoBehaviour {
 	public GameObject cube2;
 	public GameObject cube3;
 	public float speedX = 1.0f;
-	public float amplitude = -0.001f;
+	public float amplitude = -0.3f;//-0.001f
 
 	void Awake () {
 

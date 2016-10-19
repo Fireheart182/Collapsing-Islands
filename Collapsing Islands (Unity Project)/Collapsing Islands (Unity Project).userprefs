@@ -1,8 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Syd Assets/Standard Assets/ParticleSystems/Scripts/WaterHoseParticles.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Easy_HingeJoint/Editor/EZ_HingeJoint.js">
     <Files>
-      <File FileName="Assets/Syd Assets/Standard Assets/ParticleSystems/Scripts/WaterHoseParticles.cs" Line="25" Column="1" />
+      <File FileName="Assets/Easy_HingeJoint/ArrayVector3.js" Line="1" Column="1" />
+      <File FileName="Assets/Easy_HingeJoint/Editor/EZ_HingeJoint.js" Line="1" Column="1" />
+      <File FileName="Assets/Syd Assets/Islands-files/Materials/SinFloatIslands.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
