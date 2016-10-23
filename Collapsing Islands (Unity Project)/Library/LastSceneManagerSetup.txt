@@ -1,4 +1,1 @@
-sceneSetups:
-- path: Assets/Syd Assets/FloatingIslands.unity
-  isLoaded: 1
-  isActive: 1
+sceneSetups: []
