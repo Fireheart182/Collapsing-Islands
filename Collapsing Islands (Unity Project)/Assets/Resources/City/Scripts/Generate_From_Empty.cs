@@ -16,6 +16,9 @@ public class Generate_From_Empty : MonoBehaviour {
     private GameObject[][] buildings;
     private Object[] prefabs;
     private bool falling;
+	private float counter;
+	private float old_counter;
+	private float step;
 
     // Don't let buildings get created outside the grid
     bool create_building(float x, float y, float z)
@@ -97,6 +100,9 @@ public class Generate_From_Empty : MonoBehaviour {
         offset = offset > 0 ? offset : 3;
         offset = (offset * scalar);
         buildings =  new GameObject[n][];
+
+		counter = 0;
+		step = .125f;
     }
 
     // Destroy function runs a building's collapse animation.
@@ -147,6 +153,8 @@ public class Generate_From_Empty : MonoBehaviour {
                     buildings[i][j] = null; // Mark a building as chosen
                 }
             }
+			counter += step;
+			RenderSettings.skybox.SetColor("_Tint", new Color(.5f - counter, .5f- counter, .5f - counter));
     	}
     }
 }

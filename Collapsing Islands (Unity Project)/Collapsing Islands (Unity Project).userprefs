@@ -1,11 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Resources/City/Scripts/Test_Collapse.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Resources/City/Scripts/Generate_From_Empty.cs">
     <Files>
+      <File FileName="Assets/script.cs" Line="1" Column="1" />
       <File FileName="Assets/Resources/City/Scripts/Test_Collapse.cs" Line="17" Column="1" />
       <File FileName="Assets/Easy_HingeJoint/ArrayVector3.js" Line="1" Column="1" />
       <File FileName="Assets/Easy_HingeJoint/Editor/EZ_HingeJoint.js" Line="1" Column="1" />
-      <File FileName="Assets/Syd Assets/Islands-files/Materials/SinFloatIslands.cs" Line="1" Column="1" />
+      <File FileName="Assets/Syd Assets/Islands-files/Materials/SinFloatIslands.cs" Line="37" Column="1" NotebookId="1" />
+      <File FileName="Assets/Resources/City/Scripts/Generate_From_Empty.cs" Line="156" Column="20" NotebookId="1" />
+      <File FileName="Assets/Syd Assets/SimpleSmoothMouseLook.cs" Line="84" Column="4" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
