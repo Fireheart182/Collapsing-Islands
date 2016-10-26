@@ -16,9 +16,8 @@ public class Generate_From_Empty : MonoBehaviour {
     private GameObject[][] buildings;
     private Object[] prefabs;
     private bool falling;
-	private float counter;
-	private float old_counter;
-	private float step;
+	private float counter, limit;
+	private float step, individual_step;
 
     // Don't let buildings get created outside the grid
     bool create_building(float x, float y, float z)
@@ -33,6 +32,7 @@ public class Generate_From_Empty : MonoBehaviour {
     // scales the entire system.
 	void Start () 
     {
+        RenderSettings.skybox.SetColor("_Tint", new Color(.5f, .5f, .5f));
         // Variable intitializations
         var_init();
 
@@ -102,7 +102,9 @@ public class Generate_From_Empty : MonoBehaviour {
         buildings =  new GameObject[n][];
 
 		counter = 0;
+        limit = 0;
 		step = .125f;
+        individual_step = step / 5f * Time.deltaTime;
     }
 
     // Destroy function runs a building's collapse animation.
@@ -153,8 +155,16 @@ public class Generate_From_Empty : MonoBehaviour {
                     buildings[i][j] = null; // Mark a building as chosen
                 }
             }
-			counter += step;
-			RenderSettings.skybox.SetColor("_Tint", new Color(.5f - counter, .5f- counter, .5f - counter));
+
+			limit += step;
+            Debug.Log("Limit: " + limit);
     	}
+
+        if (counter < limit)
+        {
+            RenderSettings.skybox.SetColor("_Tint", new Color(.5f - counter, .5f- counter, .5f - counter));
+            counter += individual_step;
+            Debug.Log(counter);
+        }
     }
 }
