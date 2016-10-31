@@ -15,6 +15,7 @@ public class Generate_From_Empty : MonoBehaviour {
 
     private GameObject[][] buildings;
     private Object[] prefabs;
+    private Object[] sounds;
     private bool falling;
 	private float counter, limit;
 	private float step, individual_step;
@@ -32,6 +33,7 @@ public class Generate_From_Empty : MonoBehaviour {
     // scales the entire system.
 	void Start () 
     {
+        Debug.Log("erm");
         RenderSettings.skybox.SetColor("_Tint", new Color(.5f, .5f, .5f));
         // Variable intitializations
         var_init();
@@ -74,6 +76,8 @@ public class Generate_From_Empty : MonoBehaviour {
                     buildings[i][j].transform.Rotate(0f, 
                                                     Random.Range(0.0f,360.0f),
                                                     0f);
+                    AudioSource audioSource = buildings[i][j].AddComponent<AudioSource>();
+                    audioSource.clip = sounds[Random.Range(0, sounds.Length)] as AudioClip;
                 }
                 else
                 {
@@ -90,6 +94,8 @@ public class Generate_From_Empty : MonoBehaviour {
         falling = true;
         string path = "City/City Prefabs/";
         prefabs = Resources.LoadAll(path, typeof(GameObject));
+
+        sounds = Resources.LoadAll("Sounds/", typeof(AudioClip));
 
         // Default value of n,m = 5, offset = 3
         n = n > 0 ? n : 5;
@@ -111,9 +117,11 @@ public class Generate_From_Empty : MonoBehaviour {
     IEnumerator destroy(GameObject b)
     {
         Animation anim = b.GetComponent<Animation>();
+        AudioSource audio = b.GetComponent<AudioSource>();
         // Make sure all the buildings don't start collapsing at exactly the same time
         yield return new WaitForSeconds(Random.Range(0f, 5f));
         anim.Play();
+        audio.Play();
     }
 	
 	// Update is called once per frame
