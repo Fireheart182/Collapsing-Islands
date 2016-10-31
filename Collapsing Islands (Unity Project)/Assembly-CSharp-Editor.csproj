@@ -58,6 +58,8 @@
      <None Include="Assets\GoogleVR\Distortion\GvrDistortion.cginc" />
      <None Include="Assets\GoogleVR\Legacy\Resources\UnlitTexture.shader" />
      <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+     <None Include="Assets\skyboxGradientFlat.shader" />
+     <None Include="Assets\skyboxGradientHorizon.shader" />
      <None Include="Assets\Syd Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
      <None Include="Assets\Syd Assets\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
      <None Include="Assets\Syd Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
